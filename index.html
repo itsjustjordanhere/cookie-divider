@@ -1,0 +1,178 @@
+<!-- Author: https://github.com/itsjustjordanhere -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="assets/css/Atma.css" />
+    <link rel="stylesheet" href="assets/css/Nunito.css" />
+    <link rel="stylesheet" href="assets/css/Open%20Sans.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Cookie Divider</title>
+  </head>
+
+  <body>
+    <!-- JavaScript is required alert start -->
+    <noscript>
+      <div class="alert alert-warning" role="alert">
+        <span>JavaScript is Disabled</span>
+      </div>
+    </noscript>
+    <!-- JavaScript is required alert end -->
+
+    <header>
+      <!-- navigation start -->
+      <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid">
+          <div class="navbar-brand">
+            <p class="fontFamilyAtma">Cookie Divider</p>
+          </div>
+          <button
+            class="btn btn-sm bg-danger clearResults"
+            id="clearResults"
+            type="button"
+          >
+            Clear Results
+          </button>
+        </div>
+      </nav>
+      <!-- navigation end -->
+    </header>
+    <main>
+      <!-- enter total cookies heading start -->
+      <div class="container">
+        <div class="row">
+          <div class="col totalCookiesClass">
+            <h4 class="text-center fontFamilyAtma">Enter Total Cookies</h4>
+          </div>
+        </div>
+        <!-- enter total cookies heading end -->
+
+        <!-- validation cookie start -->
+        <div class="row">
+          <div class="col cookiesErrorClass">
+            <span
+              class="text-danger d-flex justify-content-center"
+              id="negativeCookieMessage"
+            ></span>
+          </div>
+        </div>
+        <!-- validation cookie end -->
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <!-- Plus cookie button start -->
+            <button
+              class="btn btn-success cookiesPlusButtonClass"
+              id="totalCookiesPlusBtn"
+              type="button"
+            >
+              +
+            </button>
+            <!-- Plus cookie button end -->
+            <!-- cookie number input start -->
+            <input
+              class="border rounded-pill cookiesInputTotalClass"
+              type="number"
+              id="totalCookies"
+              value="0"
+              step="1"
+              min="1"
+            />
+            <!-- cookie number input end -->
+            <!-- Minus cookie button start -->
+            <button
+              class="btn btn-primary cookiesMinusButtonClass"
+              id="totalCookiesMinusBtn"
+              type="button"
+            >
+              -
+            </button>
+            <!-- Minus cookie button end -->
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="container addMargin">
+      <div class="row">
+        <div class="col">
+          <!-- enter number of people heading start -->
+          <h4 class="text-center fontFamilyAtma">Enter Number of People</h4>
+          <!-- enter number of people heading end -->
+          <!-- validation people start -->
+          <span
+            class="text-danger d-flex justify-content-center"
+            id="negativePeopleMessage"
+          ></span>
+          <!-- validation people end -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <!-- plus people button start -->
+          <button
+            class="btn btn-success peoplePlusButtonClass"
+            id="peoplePlusBtn"
+            type="button"
+          >
+            +
+          </button>
+          <!-- plus people button end -->
+          <!-- enter people input start -->
+          <input
+            class="border rounded-pill peopleInputTotalClass"
+            type="number"
+            id="peopleTotal"
+            value="0"
+          />
+          <!-- enter people input end -->
+          <!-- Minus people button start -->
+          <button
+            class="btn btn-primary peopleMinusButtonClass"
+            id="peopleMinusBtn"
+            type="button"
+          >
+            -
+          </button>
+          <!-- Minus people button end -->
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="col d-flex d-sm-flex justify-content-center justify-content-sm-center addMarginCalculate"
+        >
+          <!-- Calculate Now button start -->
+          <button
+            class="btn btn-info calculateCookiesClass"
+            id="calculateCookies"
+            type="button"
+          >
+            Calculate Now
+          </button>
+          <!-- Calculate Now button end -->
+        </div>
+      </div>
+    </div>
+    <div class="container addMargin">
+      <div class="row">
+        <div class="col d-flex justify-content-center align-items-center">
+          <!-- cookie to share heading start -->
+          <h2 class="display-6 fontFamilyAtma">&nbsp;Cookies to Share</h2>
+          <!-- cookie to share heading end -->
+        </div>
+        <div class="col d-flex justify-content-center">
+          <!-- show cookie to share amount start -->
+          <p class="fs-3 fontFamilyAtma showCookiesAmount" id="cookiesToShare">
+            0
+          </p>
+          <!-- show cookie to share amount end -->
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>
