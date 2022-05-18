@@ -1,0 +1,88 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: #e0cee0;
+}
+
+.fontFamilyAtma {
+  font-family: Atma, serif;
+}
+
+.clearResults,
+.clearResults:focus,
+.clearResults:hover {
+  color: white;
+  border-radius: 0;
+}
+
+.showCookiesAmount {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.totalCookiesClass {
+  margin-top: 20px;
+}
+
+.cookiesErrorClass {
+  margin-top: 20px;
+}
+
+.cookiesPlusButtonClass {
+  margin-right: 10px;
+  box-shadow: 3px 2px;
+}
+
+.cookiesInputTotalClass {
+  text-align: center;
+  box-shadow: 0px 4px;
+}
+
+.cookiesMinusButtonClass {
+  margin-left: 10px;
+  box-shadow: 3px 2px;
+}
+
+.addMargin {
+  margin-top: 50px;
+}
+
+.peoplePlusButtonClass {
+  margin-right: 10px;
+  box-shadow: 3px 2px;
+}
+
+.peopleInputTotalClass {
+  text-align: center;
+  box-shadow: 0px 5px;
+}
+
+.peopleMinusButtonClass {
+  margin-left: 10px;
+  box-shadow: 3px 2px;
+}
+
+.addMarginCalculate {
+  margin-top: 30px;
+}
+
+.calculateCookiesClass,
+.calculateCookiesClass:focus,
+.calculateCookiesClass:hover {
+  color: #b26b70;
+  background: #eabfc4;
+  border-style: double;
+  box-shadow: 5px 5px 0px 0px #e8a5af;
+  border-radius: 0;
+}
