@@ -131,6 +131,8 @@ peoplePlusBtn.addEventListener("click", function () {
       "Either you'll devour all the cookies but if not then please add more people.";
   } else if (value === 0) {
     peopleError.innerText = null;
+  } else if (value > 1) {
+    peopleError.innerText = null;
   }
 });
 // people plus button event end
