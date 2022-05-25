@@ -26,6 +26,20 @@ window.onload = () => {
   cookieTotalInput.value = localStorage.getItem("totalCookies");
   peopleTotalInput.value = localStorage.getItem("totalPeople");
   cookieToShare.innerText = localStorage.getItem("cookieToShare");
+
+  validationAfterRefresh();
+  function validationAfterRefresh() {
+    if (cookieTotalInput.value < 0) {
+      cookieError.innerText = "Error negative number detected";
+    }
+    if (peopleTotalInput.value < 0) {
+      peopleError.innerText = "Error negative number detected";
+    }
+    if (peopleTotalInput.value == 1) {
+      peopleError.innerText =
+        "Either you'll devour all the cookies but if not then please add more people.";
+    }
+  }
 };
 
 // cookie events start
