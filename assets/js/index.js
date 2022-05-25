@@ -23,9 +23,9 @@ const clearResults = document.getElementById("clearResults");
 // ----------------------------------------------------------------
 
 window.onload = () => {
-  cookieTotalInput.value = sessionStorage.getItem("totalCookies");
-  peopleTotalInput.value = sessionStorage.getItem("totalPeople");
-  cookieToShare.innerText = sessionStorage.getItem("cookieToShare");
+  cookieTotalInput.value = localStorage.getItem("totalCookies");
+  peopleTotalInput.value = localStorage.getItem("totalPeople");
+  cookieToShare.innerText = localStorage.getItem("cookieToShare");
 };
 
 // cookie events start
@@ -35,7 +35,7 @@ cookieTotalInput.addEventListener("change", () => {
   let value = parseInt(document.getElementById("totalCookies").value, 10);
   value = isNaN(value) ? 0 : value;
   document.getElementById("totalCookies").value = value;
-  window.sessionStorage.setItem("totalCookies", value);
+  window.localStorage.setItem("totalCookies", value);
   if (value < 0) {
     cookieError.innerText = "Error negative number detected";
   } else if (value === 0) {
@@ -61,7 +61,7 @@ cookiePlusBtn.addEventListener("click", function () {
   value = isNaN(value) ? 0 : value;
   value++;
   document.getElementById("totalCookies").value = value;
-  window.sessionStorage.setItem("totalCookies", value);
+  window.localStorage.setItem("totalCookies", value);
   if (value == 0) {
     cookieError.innerText = null;
   }
@@ -75,7 +75,7 @@ cookieMinusBtn.addEventListener("click", function () {
   value = isNaN(value) ? 0 : value;
   value--;
   document.getElementById("totalCookies").value = value;
-  window.sessionStorage.setItem("totalCookies", value);
+  window.localStorage.setItem("totalCookies", value);
   if (value < 0) {
     cookieError.innerText = "Error negative number detected";
   } else if (value == 0) {
@@ -83,15 +83,20 @@ cookieMinusBtn.addEventListener("click", function () {
   }
 });
 // cookie minus button change event end
+
 // cookie events end
 
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
 // people events start
+
 // people change event start
 peopleTotalInput.addEventListener("change", () => {
   let value = parseInt(document.getElementById("peopleTotal").value, 10);
   value = isNaN(value) ? 0 : value;
   document.getElementById("peopleTotal").value = value;
-  window.sessionStorage.setItem("totalPeople", value);
+  window.localStorage.setItem("totalPeople", value);
   if (value < 0) {
     peopleError.innerText = "Error negative number detected";
   } else if (value === 1) {
@@ -121,7 +126,7 @@ peoplePlusBtn.addEventListener("click", function () {
   value = isNaN(value) ? 0 : value;
   value++;
   document.getElementById("peopleTotal").value = value;
-  window.sessionStorage.setItem("totalPeople", value);
+  window.localStorage.setItem("totalPeople", value);
   if (value == 1) {
     peopleError.innerText =
       "Either you'll devour all the cookies but if not then please add more people.";
@@ -139,7 +144,7 @@ peopleMinusBtn.addEventListener("click", function () {
   value = isNaN(value) ? 0 : value;
   value--;
   document.getElementById("peopleTotal").value = value;
-  window.sessionStorage.setItem("totalPeople", value);
+  window.localStorage.setItem("totalPeople", value);
   if (value < 0) {
     peopleError.innerText = "Error negative number detected";
   } else if (value == 1) {
@@ -157,16 +162,16 @@ peopleMinusBtn.addEventListener("click", function () {
 calculateTotal.addEventListener("click", function () {
   let calc = cookieTotalInput.value / peopleTotalInput.value;
   let calcOutput = (cookieToShare.innerText = Math.round(calc.toString()));
-  window.sessionStorage.setItem("cookieToShare", calcOutput);
+  window.localStorage.setItem("cookieToShare", calcOutput);
 });
 
 // calculate total number end
 
 // clear results start
 clearResults.addEventListener("click", function () {
-  window.sessionStorage.removeItem("cookieToShare");
-  window.sessionStorage.removeItem("totalPeople");
-  window.sessionStorage.removeItem("totalCookies");
+  window.localStorage.removeItem("cookieToShare");
+  window.localStorage.removeItem("totalPeople");
+  window.localStorage.removeItem("totalCookies");
   cookieTotalInput.value = null;
   peopleTotalInput.value = null;
   cookieToShare.innerText = null;
