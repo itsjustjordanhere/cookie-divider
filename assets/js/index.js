@@ -25,18 +25,18 @@ const clearResults = document.getElementById("clearResults");
 window.onload = () => {
   cookieTotalInput.value = localStorage.getItem("totalCookies");
   peopleTotalInput.value = localStorage.getItem("totalPeople");
-  cookieToShare.innerText = localStorage.getItem("cookieToShare");
+  cookieToShare.textContent = localStorage.getItem("cookieToShare");
 
   validationAfterRefresh();
   function validationAfterRefresh() {
     if (cookieTotalInput.value < 0) {
-      cookieError.innerText = "Error negative number detected";
+      cookieError.textContent = "Error negative number detected";
     }
     if (peopleTotalInput.value < 0) {
-      peopleError.innerText = "Error negative number detected";
+      peopleError.textContent = "Error negative number detected";
     }
     if (peopleTotalInput.value == 1) {
-      peopleError.innerText =
+      peopleError.textContent =
         "Either you'll devour all the cookies but if not then please add more people.";
     }
   }
@@ -51,11 +51,11 @@ cookieTotalInput.addEventListener("change", () => {
   document.getElementById("totalCookies").value = value;
   window.localStorage.setItem("totalCookies", value);
   if (value < 0) {
-    cookieError.innerText = "Error negative number detected";
+    cookieError.textContent = "Error negative number detected";
   } else if (value === 0) {
-    cookieError.innerText = null;
+    cookieError.textContent = null;
   } else if (value > 0) {
-    cookieError.innerText = null;
+    cookieError.textContent = null;
   }
 });
 // cookie input change event end
@@ -77,7 +77,7 @@ cookiePlusBtn.addEventListener("click", function () {
   document.getElementById("totalCookies").value = value;
   window.localStorage.setItem("totalCookies", value);
   if (value == 0) {
-    cookieError.innerText = null;
+    cookieError.textContent = null;
   }
 });
 // cookie plus button change event end
@@ -91,9 +91,9 @@ cookieMinusBtn.addEventListener("click", function () {
   document.getElementById("totalCookies").value = value;
   window.localStorage.setItem("totalCookies", value);
   if (value < 0) {
-    cookieError.innerText = "Error negative number detected";
+    cookieError.textContent = "Error negative number detected";
   } else if (value == 0) {
-    cookieError.innerText = null;
+    cookieError.textContent = null;
   }
 });
 // cookie minus button change event end
@@ -112,14 +112,14 @@ peopleTotalInput.addEventListener("change", () => {
   document.getElementById("peopleTotal").value = value;
   window.localStorage.setItem("totalPeople", value);
   if (value < 0) {
-    peopleError.innerText = "Error negative number detected";
+    peopleError.textContent = "Error negative number detected";
   } else if (value === 1) {
-    peopleError.innerText =
+    peopleError.textContent =
       "Either you'll devour all the cookies but if not then please add more people.";
   } else if (value > 1) {
-    peopleError.innerText = null;
+    peopleError.textContent = null;
   } else if (value === 0) {
-    peopleError.innerText = null;
+    peopleError.textContent = null;
   }
 });
 
@@ -142,12 +142,12 @@ peoplePlusBtn.addEventListener("click", function () {
   document.getElementById("peopleTotal").value = value;
   window.localStorage.setItem("totalPeople", value);
   if (value == 1) {
-    peopleError.innerText =
+    peopleError.textContent =
       "Either you'll devour all the cookies but if not then please add more people.";
   } else if (value === 0) {
-    peopleError.innerText = null;
+    peopleError.textContent = null;
   } else if (value > 1) {
-    peopleError.innerText = null;
+    peopleError.textContent = null;
   }
 });
 // people plus button event end
@@ -160,12 +160,12 @@ peopleMinusBtn.addEventListener("click", function () {
   document.getElementById("peopleTotal").value = value;
   window.localStorage.setItem("totalPeople", value);
   if (value < 0) {
-    peopleError.innerText = "Error negative number detected";
+    peopleError.textContent = "Error negative number detected";
   } else if (value == 1) {
-    peopleError.innerText =
+    peopleError.textContent =
       "Either you'll devour all the cookies but if not then please add more people.";
   } else if (value == 0) {
-    peopleError.innerText = null;
+    peopleError.textContent = null;
   }
 });
 // people minus button event end
@@ -175,7 +175,7 @@ peopleMinusBtn.addEventListener("click", function () {
 // calculate total number start
 calculateTotal.addEventListener("click", function () {
   let calc = cookieTotalInput.value / peopleTotalInput.value;
-  let calcOutput = (cookieToShare.innerText = Math.round(calc.toString()));
+  let calcOutput = (cookieToShare.textContent = Math.round(calc.toString()));
   window.localStorage.setItem("cookieToShare", calcOutput);
 });
 
@@ -188,9 +188,9 @@ clearResults.addEventListener("click", function () {
   window.localStorage.removeItem("totalCookies");
   cookieTotalInput.value = null;
   peopleTotalInput.value = null;
-  cookieToShare.innerText = null;
-  peopleError.innerText = null;
-  cookieError.innerText = null;
+  cookieToShare.textContent = null;
+  peopleError.textContent = null;
+  cookieError.textContent = null;
 });
 // clear results end
 
