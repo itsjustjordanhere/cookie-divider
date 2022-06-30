@@ -51,6 +51,8 @@ cookieTotalInput.addEventListener("change", () => {
   document.getElementById("totalCookies").value = value;
   window.localStorage.setItem("totalCookies", value);
   if (value < 0) {
+    let errorSound = new Audio("/assets/js/sounds/error.mp3");
+    errorSound.play();
     cookieError.textContent = "Error negative number detected";
   } else if (value === 0) {
     cookieError.textContent = null;
@@ -71,6 +73,8 @@ cookieTotalInput.addEventListener("keypress", function (event) {
 
 // cookie plus button event start
 cookiePlusBtn.addEventListener("click", function () {
+  let plusBtnSound = new Audio("/assets/js/sounds/cookie_plus_btn_sound.mp3");
+  plusBtnSound.play();
   let value = parseInt(document.getElementById("totalCookies").value, 10);
   value = isNaN(value) ? 0 : value;
   value++;
@@ -85,12 +89,16 @@ cookiePlusBtn.addEventListener("click", function () {
 // cookie minus button change event start
 
 cookieMinusBtn.addEventListener("click", function () {
+  let minusBtnSound = new Audio("/assets/js/sounds/cookieMinusBtnSound.mp3");
+  minusBtnSound.play();
   let value = parseInt(document.getElementById("totalCookies").value, 10);
   value = isNaN(value) ? 0 : value;
   value--;
   document.getElementById("totalCookies").value = value;
   window.localStorage.setItem("totalCookies", value);
   if (value < 0) {
+    let errorSound = new Audio("/assets/js/sounds/error.mp3");
+    errorSound.play();
     cookieError.textContent = "Error negative number detected";
   } else if (value == 0) {
     cookieError.textContent = null;
@@ -112,6 +120,8 @@ peopleTotalInput.addEventListener("change", () => {
   document.getElementById("peopleTotal").value = value;
   window.localStorage.setItem("totalPeople", value);
   if (value < 0) {
+    let errorSound = new Audio("/assets/js/sounds/error.mp3");
+    errorSound.play();
     peopleError.textContent = "Error negative number detected";
   } else if (value === 1) {
     peopleError.textContent =
@@ -136,6 +146,8 @@ peopleTotalInput.addEventListener("keypress", function (event) {
 
 // people plus button event start
 peoplePlusBtn.addEventListener("click", function () {
+  let plusBtnSound = new Audio("/assets/js/sounds/cookie_plus_btn_sound.mp3");
+  plusBtnSound.play();
   let value = parseInt(document.getElementById("peopleTotal").value, 10);
   value = isNaN(value) ? 0 : value;
   value++;
@@ -154,12 +166,16 @@ peoplePlusBtn.addEventListener("click", function () {
 
 // people minus button event start
 peopleMinusBtn.addEventListener("click", function () {
+  let minusBtnSound = new Audio("/assets/js/sounds/cookieMinusBtnSound.mp3");
+  minusBtnSound.play();
   let value = parseInt(document.getElementById("peopleTotal").value, 10);
   value = isNaN(value) ? 0 : value;
   value--;
   document.getElementById("peopleTotal").value = value;
   window.localStorage.setItem("totalPeople", value);
   if (value < 0) {
+    let errorSound = new Audio("/assets/js/sounds/error.mp3");
+    errorSound.play();
     peopleError.textContent = "Error negative number detected";
   } else if (value == 1) {
     peopleError.textContent =
@@ -174,6 +190,8 @@ peopleMinusBtn.addEventListener("click", function () {
 
 // calculate total number start
 calculateTotal.addEventListener("click", function () {
+  let clearSoundEffect = new Audio("/assets/js/sounds/bading.wav");
+  clearSoundEffect.play();
   let calc = cookieTotalInput.value / peopleTotalInput.value;
   let calcOutput = (cookieToShare.textContent = Math.round(calc.toString()));
   window.localStorage.setItem("cookieToShare", calcOutput);
@@ -182,7 +200,9 @@ calculateTotal.addEventListener("click", function () {
 // calculate total number end
 
 // clear results start
+
 clearResults.addEventListener("click", function () {
+  console.log("clicked clear results");
   window.localStorage.removeItem("cookieToShare");
   window.localStorage.removeItem("totalPeople");
   window.localStorage.removeItem("totalCookies");
